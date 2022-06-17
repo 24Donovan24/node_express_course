@@ -11,7 +11,8 @@ app.use(express.urlencoded({ extended: false }))
 // parse json
 app.use(express.json())
 
-app.use('/api/people', people)
+//Requests from similar base paths route have been grouped together in routes folder
+app.use('/api/people', people) //(base path, middleware) //setting up the middleware
 app.use('/login', auth)
 
 app.listen(5000, () => {
